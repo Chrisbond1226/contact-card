@@ -73,11 +73,11 @@ window.deleteCard = (e) => {
   fetchCards();
 };
 
-window.editcard = (e) => {
-  // grabs id from button element attached to the contact card and sets a global variable that will be used in form
+window.editCard = (e) => {
+  // Grabs the id from the button element attached to the contact card and sets a global variable that will be used in the form element.
   profileId = parseInt(e.dataset.id);
 
-  // Grabs info to pre pop edit form
+  // Grabs information to pre-populate edit form
   let editName = e.dataset.name;
   let editEmail = e.dataset.email;
   let editPhone = e.dataset.phone;
@@ -88,7 +88,7 @@ window.editcard = (e) => {
 
   form.style.display = "block";
 
-  // Toggles submit button so that it now updates an existing contact instead of posting a new one
+  // Toggles the submit button so that it now Updates an existing contact instead of posting a new one
   submitBtnToUpdate = true;
 };
 

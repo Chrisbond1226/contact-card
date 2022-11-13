@@ -88,19 +88,16 @@ export const deleteDb = async (id) => {
   return request?.value;
 };
 
+// EXPORTED EDIT function
 export const editDb = async (id, name, email, phone, profile) => {
   console.log("PUT to the database");
 
-  // Create a connection to the database and the version we want to use
   const contactDb = await openDB("contact_db", 1);
 
-  // create new transaction and specify the store and data privileges.
   const tx = contactDb.transaction("contacts", "readwrite");
 
-  // Open up the desired object store
   const store = tx.objectStore("contacts");
 
-  // Use the .put() method to update stuff
   const request = store.put({
     id: id,
     name: name,
@@ -110,6 +107,4 @@ export const editDb = async (id, name, email, phone, profile) => {
   });
   const result = await request;
   console.log("🚀 - data saved to the database", result);
-
-  //
 };
