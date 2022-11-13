@@ -88,7 +88,7 @@ export const deleteDb = async (id) => {
   return request?.value;
 };
 
-export const editDb = async (id) => {
+export const editDb = async (id, name, email, phone, profile) => {
   console.log("PUT to the database");
 
   // Create a connection to the database and the version we want to use

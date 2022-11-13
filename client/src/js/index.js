@@ -1,7 +1,7 @@
 import "./form";
 // import "./submit";
 
-import { initDb, getDb, postDb, deleteDb, editDb } from "./database";
+import { initDb, postDb, deleteDb, editDb } from "./database";
 import { fetchCards } from "./cards";
 import { toggleForm, clearForm } from "./form";
 
