@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/Chrisbond1226/contact-card#readme",
   "dependencies": {
-    "concurrently": "^7.5.0"
+    "concurrently": "^7.5.0",
+    "webpack-pwa-manifest": "^4.3.0"
   },
   "engines": {
     "node": "v16.17.0"

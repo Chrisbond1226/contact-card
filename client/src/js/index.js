@@ -12,6 +12,8 @@ import Logo from "../images/logo.png";
 import Bear from "../images/bear.png";
 import Dog from "../images/dog.png";
 
+const installBtn = document.getElementById("installBtn");
+
 // Add images on load
 window.addEventListener("load", function () {
   fetchCards;
@@ -98,5 +100,20 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./service-worker.js");
   });
 }
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  installBtn.style.visibility = "visible";
+
+  installBtn.addEventListener("click", () => {
+    event.prompt();
+    installBtn.setAttribute("disabled", true);
+    installBtn.textContent = "Installed!";
+  });
+});
+
+window.addEventListener("appinstalled", (event) => {
+  console.log("👍", "appinstalled", event);
+});
 import { Tooltip, Toast, Popover } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
